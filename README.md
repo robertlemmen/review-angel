@@ -17,12 +17,15 @@ profit.
 - subtitle: something along the "as if people mattered" idea, to clarify the
   position in that dimension
 - publish as free pdf, perhaps as an ebook for kindle et al, check out
-  self-publishing / print-on-demand options
+  self-publishing / print-on-demand options. 
+- a nice size would be e.g. like the o'reilly uml booklet, A5 or so and about
+  100 pages
 - get stickers for laptops and beer fridges. show you care!
 - encourage readers to review the book itself
 - tool and language agnostic, examples in the book should be from different
   languages
 - one part for the reviewer, one part for the code author
+- write some perl thing to render a code review example
 
 ## Prior Work
 

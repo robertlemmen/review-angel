@@ -1,5 +1,6 @@
 \documentclass[11pt,twoside]{article}
 \usepackage[b6paper]{geometry}
+\usepackage{titling}
 
 \usepackage{lipsum}
 \usepackage{layout}
@@ -21,7 +22,26 @@
 \addtolength{\textwidth}{-2in}
 \addtolength{\textwidth}{38pt}
 
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+}
+
+\title{Review Angel}
+\subtitle{Test another ting if you want}
+\author{Robert Lemmen}
+
 \begin{document}
+\begin{titlepage}
+\begin{center}
+{\huge\bf\thetitle}
+\theposttitle
+\end{center}
+\end{titlepage}
+\thispagestyle{empty}
+\clearpage
 % XXX inner title page
 % XXX copyright etc
 \tableofcontents
