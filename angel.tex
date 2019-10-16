@@ -1,9 +1,10 @@
 \documentclass[11pt,twoside]{article}
 \usepackage[b6paper]{geometry}
-\usepackage{titling}
+\usepackage{graphicx}
+\usepackage{microtype}
 
+% XXX debug stuff
 \usepackage{lipsum}
-\usepackage{layout}
 
 \setlength{\hoffset}{-25pt}
 \setlength{\voffset}{-25pt}
@@ -21,40 +22,54 @@
 \setlength{\textwidth}{\paperwidth}
 \addtolength{\textwidth}{-2in}
 \addtolength{\textwidth}{38pt}
+\clubpenalty = 10000
+\widowpenalty = 10000
+\displaywidowpenalty = 10000
 
-\newcommand{\subtitle}[1]{%
-  \posttitle{%
-    \par\end{center}
-    \begin{center}\large#1\end{center}
-    \vskip0.5em}%
+\pdfinfo {
+    /Title(Review Angel)
+    /Author(Robert Lemmen)
 }
 
-\title{Review Angel}
-\subtitle{Test another ting if you want}
-\author{Robert Lemmen}
-
 \begin{document}
+
 \begin{titlepage}
-\begin{center}
-{\huge\bf\thetitle}
-\theposttitle
+\begin{center}~\\
+\vspace{2em}
+{\huge\bfseries\sffamily Review Angel}\\
+\vspace{1em}
+{\large Robert Lemmen}
+\vfill\vspace{-2em} % to move the image mostly into the center of this page
+\includegraphics[width=\textwidth]{logo}
+\vfill
+% XXX better subtitle
+\textit{\large ``As if shit mattered''}
 \end{center}
 \end{titlepage}
 \thispagestyle{empty}
 \clearpage
-% XXX inner title page
-% XXX copyright etc
+
+DRAFT -- \today
+
+\vspace{1.5em}
+\copyright~2019 Robert Lemmen $<$robertle@semistable.com$>$
+
+\vspace{1.5em}
+This book is open source licensed under the Artistic License 2.0\footnote{
+https://opensource.org/licenses/Artistic-2.0}. Please report errors, provide
+feedback and adapt to your needs in the github repository \footnote{
+https://github.com/robertlemmen/review-angel}.
+\thispagestyle{empty}
+\clearpage
+
 \tableofcontents
 \clearpage
+
 \section{Preface}
 \section{Why We Review}
 \lipsum
 \lipsum
 \lipsum
 \lipsum
-
-\layout
-\clearpage
-\layout
 
 \end{document}
