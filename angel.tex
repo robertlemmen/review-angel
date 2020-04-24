@@ -1,11 +1,16 @@
-\documentclass[11pt,twoside]{article}
-\usepackage[b6paper]{geometry}
-\usepackage{graphicx}
-\usepackage{microtype}
+\documentclass[10pt,twoside]{article}
+\usepackage[paperwidth=5.5in,paperheight=8.5in]{geometry}
+\usepackage{lmodern}
+\usepackage[linkcolor=blue, colorlinks=true]{hyperref}
+\usepackage[pdftex]{graphicx,color}
+\usepackage{fancyhdr}
 
-% XXX debug stuff
+% XXX debug stuff, remove later
 \usepackage{lipsum}
+\usepackage{layout}
 
+% XXX what a terrible mix of units,
+% XXX margins also probably need adjustments
 \setlength{\hoffset}{-25pt}
 \setlength{\voffset}{-25pt}
 \setlength{\oddsidemargin}{12pt}
@@ -22,9 +27,15 @@
 \setlength{\textwidth}{\paperwidth}
 \addtolength{\textwidth}{-2in}
 \addtolength{\textwidth}{38pt}
-\clubpenalty = 10000
-\widowpenalty = 10000
-\displaywidowpenalty = 10000
+
+% XXX where exactly should the page numbers be? 
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhf{}
+\fancyfoot[LE,RO]{\qquad\thepage}
+\fancyfoot[RO]{\thepage\qquad}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\footskip}{32pt}
 
 \pdfinfo {
     /Title(Review Angel)
@@ -36,14 +47,15 @@
 \begin{titlepage}
 \begin{center}~\\
 \vspace{2em}
-{\huge\bfseries\sffamily Review Angel}\\
-\vspace{1em}
+% XXX still unhappy with the sffamily...
+{\Huge\scshape Review Angel}\\
+\vspace{16pt}
 {\large Robert Lemmen}
-\vfill\vspace{-2em} % to move the image mostly into the center of this page
+\vfill\vfill
 \includegraphics[width=\textwidth]{logo}
 \vfill
 % XXX better subtitle
-\textit{\large ``As if shit mattered''}
+{\large As if shit mattered}
 \end{center}
 \end{titlepage}
 \thispagestyle{empty}
@@ -52,7 +64,9 @@
 DRAFT -- \today
 
 \vspace{1.5em}
-\copyright~2019 Robert Lemmen $<$robertle@semistable.com$>$
+\copyright~2019~--~2020 Robert Lemmen $<$robertle@semistable.com$>$
+
+% XXX more motivational paragraph that people can contribute
 
 \vspace{1.5em}
 This book is open source licensed under the Artistic License 2.0\footnote{
@@ -67,9 +81,11 @@ https://github.com/robertlemmen/review-angel}.
 
 \section{Preface}
 \section{Why We Review}
+
 \lipsum
+
 \lipsum
-\lipsum
-\lipsum
+\clearpage
+\layout
 
 \end{document}
