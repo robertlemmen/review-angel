@@ -1,0 +1,24 @@
+#!/usr/bin/perl
+
+use 5.012;
+use warnings;
+
+while (<>) {
+    chomp;
+
+    # escape characters that would cause trouble in the latex
+    s/_/\\_/g;
+    s/&/\\&/g;
+
+    # now we can wrap each line into it's own command 
+    if (/^\+\+\+/) {
+        say "\\pppline{" . $_ . "}";
+    }
+    elsif (/^\+/) {
+        say "\\pline{" . $_ . "}";
+    }
+    else {
+        # XXX we should cover all cases and fail else
+        say "\\oline{" . $_ . "}";
+    } 
+}
